@@ -1,31 +1,28 @@
-import { useEffect, useState } from 'react';
+import { TableContainer, CurrenciesList, CurrencyRow, Currency, Highlight } from './CurrencyRatesTableStyles';
 
-interface CurrencyRates {
-    date: string;
-    base: string;
-    rates: object;
+type CurrencyRatesTableProps = {
+    data: {
+        date: string,
+        base: string,
+        rates: object
+    }
 }
-const CurrencyRatesTable = () => {
-    const [data, setData] = useState<CurrencyRates>({date: '', base: '', rates: {}});
 
+const CurrencyRatesTable = ({ data }: CurrencyRatesTableProps) => {
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const loadedData = await fetch('https://api.vatcomply.com/rates');
-            const parsedData = await loadedData.json();
-
-            setData(parsedData);
-        }
-
-        fetchData();
-
-    }, []);
-
-    return <div>
-        {data.date}
-        {data.base}
-        {Object.entries(data.rates).map((element) => <p key={element[0]}>{`${element[0]} - ${element[1]}`}</p>)}
-    </div>
+    return <TableContainer>
+        <CurrenciesList>
+            {Object.entries(data.rates).map((element) =>
+                data.base !== element[0] &&
+                    <CurrencyRow key={element[0]}>
+                        <Currency>
+                            <Highlight>1</Highlight> {data.base}
+                        </Currency>
+                        <Currency><Highlight>{element[1]}</Highlight> {element[0]}</Currency>
+                    </CurrencyRow>
+            )}
+        </CurrenciesList>
+    </TableContainer>
 }
 
 export default CurrencyRatesTable;
