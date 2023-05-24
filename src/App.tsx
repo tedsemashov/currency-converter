@@ -1,32 +1,51 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './baseStyles.css';
-import {AppContainer, ContentContainer, CurrencyTableContainer, Rates} from './AppStyles';
+import {
+    AppContainer,
+    ContentContainer,
+    CurrencyTableContainer,
+    CurrencyWrapper,
+    InteractiveElementsContainer,
+    Rates, TransparentBackground
+} from './AppStyles';
 import CurrencyRatesTable from './components/CurrencyRatesTable/CurrencyRatesTable';
 import Button from './components/Button/Button';
-
-interface CurrencyRates {
-    date: string;
-    base: string;
-    rates: object;
-}
+import InfoRow from './components/InfoRow/InfoRow';
+import { useAppSelector } from './app/hooks';
+import SyncLoader from 'react-spinners/SyncLoader';
+import Modal from './components/Modal/Modal';
 
 const App = () => {
-    const [data, setData] = useState<CurrencyRates>({date: '', base: '', rates: {}});
+    const currency = useAppSelector(({ currency }) => currency);
+    const error = useAppSelector(({ error }) => error);
 
-    const fetchData = async () => {
-        const loadedData = await fetch('https://api.vatcomply.com/rates');
-        const parsedData = await loadedData.json();
-
-        setData(parsedData);
-    }
+    const buttonText = currency.date !== '---' ? 'Regenerate' : 'Generate';
 
   return (
     <AppContainer>
         <CurrencyTableContainer>
+            {error.isError && <Modal text={error.message} />}
+            {currency.isLoading && <TransparentBackground>
+                <SyncLoader
+                    loading={currency.isLoading}
+                    color='rgb(123, 131, 237)'
+                    size={80}
+                    aria-label="Loading Spinner"
+                    data-testid="loader"
+                />
+
+            </TransparentBackground>}
+
             <Rates>Rates</Rates>
             <ContentContainer>
-                <CurrencyRatesTable data={data}/>
-                <Button onClick={fetchData} />
+                <CurrencyRatesTable data={currency}/>
+                <InteractiveElementsContainer>
+                    <CurrencyWrapper>
+                        <InfoRow title='Date' value={currency.date}/>
+                        <InfoRow title='Currency' value={currency.base}/>
+                    </CurrencyWrapper>
+                    <Button text={buttonText} />
+                </InteractiveElementsContainer>
             </ContentContainer>
         </CurrencyTableContainer>
     </AppContainer>

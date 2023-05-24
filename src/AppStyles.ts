@@ -17,6 +17,7 @@ export const CurrencyTableContainer = styled.div`
   display: flex;
   padding: 50px;
   flex-direction: column;
+  position: relative;
 `
 
 export const Rates = styled.p`
@@ -28,5 +29,36 @@ export const Rates = styled.p`
 
 export const ContentContainer = styled.div`
   display: flex;
+  gap: 50px;
   justify-content: space-between;
+`
+
+export const InteractiveElementsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+export const CurrencyWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 200px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  justify-content: center;
+`
+
+export const TransparentBackground = styled.div`
+  display: flex;
+  background: rgb(255, 255, 255, 0.4 );
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 30px;
+  z-index: 2;
 `

@@ -8,6 +8,8 @@ export const TableContainer = styled.div`
 export const CurrenciesList = styled.ul`
   list-style-type: none;
   max-height: 525px;
+  min-height: 525px;
+  min-width: 400px;
   overflow: auto;
   margin: 25px 0;
   padding: 0;
