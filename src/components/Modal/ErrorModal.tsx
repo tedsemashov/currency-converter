@@ -1,19 +1,21 @@
 import { useEffect } from 'react';
-import { ModalContainer, ModalText } from './ModalStyles';
+import { ModalContainer, ModalText } from './ErrorModalStyles';
 import { useAppDispatch } from '../../app/hooks';
-import { setError } from '../../slices/errorSlice';
+import { setError } from './errorSlice';
 
-type ModalProps = {
+const DURATION = 5000;
+
+type ErrorModalProps = {
   text?: string;
 };
 
-const Modal = ({ text = '' }: ModalProps) => {
+const ErrorModal = ({ text = '' }: ErrorModalProps) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     const visibilityTimer = setTimeout(
       () => dispatch(setError({ isError: false })),
-      5000
+      DURATION
     );
 
     return () => {
@@ -28,4 +30,4 @@ const Modal = ({ text = '' }: ModalProps) => {
   );
 };
 
-export default Modal;
+export default ErrorModal;

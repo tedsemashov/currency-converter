@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
-import appReducer from '../slices/appSlice';
-import errorReducer from '../slices/errorSlice';
-import currenciesReducer from '../slices/currenciesSlice';
+import appReducer from '../components/CurrencyRatesTable/currencySlice';
+import errorReducer from '../components/Modal/errorSlice';
+import currenciesReducer from '../components/GenerateButton/currenciesSlice';
 
 const store = configureStore({
   reducer: {

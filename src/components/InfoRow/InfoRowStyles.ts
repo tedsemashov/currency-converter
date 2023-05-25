@@ -21,7 +21,6 @@ export const Value = styled(Title)`
 `;
 
 export const Dropdown = styled.select`
-  max-width: 100px;
   appearance: none;
   cursor: pointer;
   background-color: transparent;

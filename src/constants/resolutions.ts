@@ -1,9 +1,9 @@
-const size = {
-  mobile: '425px',
-  tablet: '768px',
+const SIZE = {
+  MOBILE: '425px',
+  TABLET: '768px',
 };
 
-export const device = {
-  mobile: `(max-width: ${size.mobile})`,
-  tablet: `(max-width: ${size.tablet})`,
+export const DEVICE = {
+  MOBILE: `(max-width: ${SIZE.MOBILE})`,
+  TABLET: `(max-width: ${SIZE.TABLET})`,
 };

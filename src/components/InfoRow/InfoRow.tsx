@@ -21,9 +21,9 @@ const InfoRow = ({
           setSelectedCurrency && setSelectedCurrency(target.value)
         }
       >
-        {options.map((option) => (
-          <option key={option} value={option}>
-            {option}
+        {options.map((currency) => (
+          <option key={currency} value={currency}>
+            {currency}
           </option>
         ))}
       </Dropdown>

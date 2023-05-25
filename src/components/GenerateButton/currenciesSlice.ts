@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { EMPTY_CURRENCY } from '../../constants/common';
 
 interface CurrenciesState {
   keys: string[];
@@ -6,7 +7,7 @@ interface CurrenciesState {
 }
 
 const initialState: CurrenciesState = {
-  keys: ['---'],
+  keys: [EMPTY_CURRENCY],
   fullInfo: {},
 };
 
@@ -14,9 +15,9 @@ export const currenciesSlice = createSlice({
   name: 'currencies',
   initialState,
   reducers: {
-    setCurrencies: (state, action: PayloadAction<object>) => {
-      state.keys = Object.keys(action.payload);
-      state.fullInfo = action.payload;
+    setCurrencies: (state, { payload }: PayloadAction<object>) => {
+      state.keys = Object.keys(payload);
+      state.fullInfo = payload;
     },
   },
 });

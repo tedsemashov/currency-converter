@@ -5,40 +5,50 @@ import {
   Currency,
   Highlight,
 } from './CurrencyRatesTableStyles';
+import { EMPTY_CURRENCY, EMPTY_RATE } from '../../constants/common';
 
 type CurrencyRatesTableProps = {
-  data: {
-    date: string;
+  currency: {
     base: string;
     rates: object;
   };
 };
 
-const CurrencyRatesTable = ({ data }: CurrencyRatesTableProps) => {
-  return (
-    <TableContainer>
-      <CurrenciesList>
-        {Object.entries(data.rates).map(
-          (element) =>
-            data.base !== element[0] && (
-              <CurrencyRow key={element[0]}>
-                <Currency>
-                  {data.base !== '---' && <Highlight>1</Highlight>} {data.base}
-                </Currency>
-                <Currency>
-                  <Highlight>
-                    {element[1] !== '--'
-                      ? Number(element[1]).toFixed(3)
-                      : element[1]}
-                  </Highlight>{' '}
-                  {element[0]}
-                </Currency>
-              </CurrencyRow>
-            )
-        )}
-      </CurrenciesList>
-    </TableContainer>
-  );
-};
+const CURRENCY_AMOUNT = 1;
+const VALUES_AFTER_DOT = 3;
+
+const CurrencyRatesTable = ({
+  currency: { rates, base },
+}: CurrencyRatesTableProps) => (
+  <TableContainer>
+    <CurrenciesList>
+      {Object.entries(rates).map((element) => {
+        const CURRENCY = element[0];
+        const QUANTITY = element[1];
+
+        return (
+          base !== element[0] && (
+            <CurrencyRow key={CURRENCY}>
+              <Currency>
+                {base !== EMPTY_CURRENCY && (
+                  <Highlight>{CURRENCY_AMOUNT}</Highlight>
+                )}{' '}
+                {base}
+              </Currency>
+              <Currency>
+                <Highlight>
+                  {QUANTITY !== EMPTY_RATE
+                    ? Number(QUANTITY).toFixed(VALUES_AFTER_DOT)
+                    : QUANTITY}
+                </Highlight>{' '}
+                {CURRENCY}
+              </Currency>
+            </CurrencyRow>
+          )
+        );
+      })}
+    </CurrenciesList>
+  </TableContainer>
+);
 
 export default CurrencyRatesTable;

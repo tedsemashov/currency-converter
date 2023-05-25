@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { device } from './constants/resolutions';
+import { DEVICE } from './constants/resolutions';
 
 export const AppContainer = styled.div`
   display: flex;
@@ -29,7 +29,7 @@ export const ContentContainer = styled.div`
   gap: 20px;
   justify-content: space-between;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.TABLET} {
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -48,18 +48,4 @@ export const CurrencyWrapper = styled.div`
   background-color: rgb(255, 255, 255);
   border-radius: 30px;
   justify-content: center;
-`;
-
-export const TransparentBackground = styled.div`
-  display: flex;
-  background: rgb(255, 255, 255, 0.4);
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 30px;
-  z-index: 2;
 `;
