@@ -3,24 +3,23 @@ import styled from 'styled-components';
 export const TableContainer = styled.div`
   background-color: rgb(255, 255, 255);
   border-radius: 30px;
-`
+`;
 
 export const CurrenciesList = styled.ul`
   list-style-type: none;
-  max-height: 525px;
-  min-height: 525px;
-  min-width: 400px;
   overflow: auto;
   margin: 25px 0;
+  height: 525px;
+  width: 400px;
   padding: 0;
-`
+`;
 
 export const CurrencyRow = styled.li`
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid gray;
   padding: 0 30px;
-`
+`;
 
 export const Currency = styled.span`
   padding: 0;
