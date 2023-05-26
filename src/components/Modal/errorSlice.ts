@@ -5,7 +5,7 @@ interface ErrorState {
   isError: boolean;
 }
 
-const initialState: ErrorState = {
+export const initialState: ErrorState = {
   message: '',
   isError: false,
 };

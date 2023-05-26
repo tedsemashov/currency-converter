@@ -3,7 +3,7 @@ import { ModalContainer, ModalText } from './ErrorModalStyles';
 import { useAppDispatch } from '../../app/hooks';
 import { setError } from './errorSlice';
 
-const DURATION = 5000;
+export const DURATION = 5000;
 
 type ErrorModalProps = {
   text?: string;
@@ -25,7 +25,9 @@ const ErrorModal = ({ text = '' }: ErrorModalProps) => {
 
   return (
     <ModalContainer>
-      <ModalText>Error: {text}. Try to generate again.</ModalText>
+      <ModalText data-testid="modal-error">
+        Error: {text}. Try to generate again.
+      </ModalText>
     </ModalContainer>
   );
 };

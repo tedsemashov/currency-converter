@@ -3,8 +3,6 @@ import SyncLoader from 'react-spinners/SyncLoader';
 import { TransparentBackground } from './SpinnerStyles';
 
 const COLOR = 'rgb(123, 131, 237)';
-const ARIA_LABEL = 'Loading Spinner';
-const DATA_TESTID = 'spinner';
 const SIZE = 80;
 
 type SpinnerProps = {
@@ -17,8 +15,8 @@ const Spinner = ({ isLoading }: SpinnerProps) => (
       loading={isLoading}
       color={COLOR}
       size={SIZE}
-      aria-label={ARIA_LABEL}
-      data-testid={DATA_TESTID}
+      aria-label="Loading Spinner"
+      data-testid="spinner"
     />
   </TransparentBackground>
 );

@@ -1,0 +1,312 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component should return common UI 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-eLqIir hknvpR"
+  >
+    <div
+      class="sc-HzRMQ jldTeR"
+    >
+      <p
+        class="sc-hIFLYB jfoYLt"
+      >
+        Rates
+      </p>
+      <div
+        class="sc-buuUZy bZhThk"
+      >
+        <div
+          class="sc-dujCx jjfXdd"
+        >
+          <ul
+            class="sc-bFmjqi jIwtnJ"
+          >
+            <li
+              class="sc-iGsdBT dZOZFL"
+            >
+              <span
+                class="sc-ckeRpf iYBsOb"
+              >
+                 ---
+              </span>
+              <span
+                class="sc-ckeRpf iYBsOb"
+              >
+                <span
+                  class="sc-kRYBTm evTJmm"
+                >
+                  --
+                </span>
+                 --
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="sc-ivAPlj VLLVr"
+        >
+          <div
+            class="sc-erJYPI chvWkk"
+          >
+            <div
+              class="sc-jwXWPX KvGDy"
+            >
+              <span
+                class="sc-gPvXVi ENRVy"
+              >
+                Date:
+              </span>
+              <span
+                class="sc-gPvXVi sc-fvifJB ENRVy kITBOq"
+              >
+                ---
+              </span>
+            </div>
+            <div
+              class="sc-jwXWPX KvGDy"
+            >
+              <span
+                class="sc-gPvXVi ENRVy"
+              >
+                Currency:
+              </span>
+              <select
+                class="sc-cNGgOM ecoeGE"
+              >
+                <option
+                  value="---"
+                >
+                  ---
+                </option>
+              </select>
+            </div>
+          </div>
+          <button
+            class="sc-kpjZlD ijPmbH"
+          >
+            Generate
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`App component should return fulfilled UI 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-eLqIir hknvpR"
+  >
+    <div
+      class="sc-HzRMQ jldTeR"
+    >
+      <p
+        class="sc-hIFLYB jfoYLt"
+      >
+        Rates
+      </p>
+      <div
+        class="sc-buuUZy bZhThk"
+      >
+        <div
+          class="sc-dujCx jjfXdd"
+        >
+          <ul
+            class="sc-bFmjqi jIwtnJ"
+          >
+            <li
+              class="sc-iGsdBT dZOZFL"
+            >
+              <span
+                class="sc-ckeRpf iYBsOb"
+              >
+                <span
+                  class="sc-kRYBTm evTJmm"
+                >
+                  1
+                </span>
+                 USD
+              </span>
+              <span
+                class="sc-ckeRpf iYBsOb"
+              >
+                <span
+                  class="sc-kRYBTm evTJmm"
+                >
+                  0.850
+                </span>
+                 EUR
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="sc-ivAPlj VLLVr"
+        >
+          <div
+            class="sc-erJYPI chvWkk"
+          >
+            <div
+              class="sc-jwXWPX KvGDy"
+            >
+              <span
+                class="sc-gPvXVi ENRVy"
+              >
+                Date:
+              </span>
+              <span
+                class="sc-gPvXVi sc-fvifJB ENRVy kITBOq"
+              >
+                2023-05-25
+              </span>
+            </div>
+            <div
+              class="sc-jwXWPX KvGDy"
+            >
+              <span
+                class="sc-gPvXVi ENRVy"
+              >
+                Currency:
+              </span>
+              <select
+                class="sc-cNGgOM ecoeGE"
+              >
+                <option
+                  value="USD"
+                >
+                  USD
+                </option>
+                <option
+                  value="EUR"
+                >
+                  EUR
+                </option>
+              </select>
+            </div>
+          </div>
+          <button
+            class="sc-kpjZlD ijPmbH"
+          >
+            Regenerate
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`App component should return spinner 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-eLqIir hknvpR"
+  >
+    <div
+      class="sc-HzRMQ jldTeR"
+    >
+      <div
+        class="sc-hHIaqO fTrAYX"
+      >
+        <span
+          aria-label="Loading Spinner"
+          data-testid="spinner"
+          style="display: inherit;"
+        >
+          <span
+            style="background-color: rgb(123, 131, 237); width: 80px; height: 80px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-SyncLoader-sync 0.6s 0.07s infinite ease-in-out; animation-fill-mode: both;"
+          />
+          <span
+            style="background-color: rgb(123, 131, 237); width: 80px; height: 80px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-SyncLoader-sync 0.6s 0.14s infinite ease-in-out; animation-fill-mode: both;"
+          />
+          <span
+            style="background-color: rgb(123, 131, 237); width: 80px; height: 80px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-SyncLoader-sync 0.6s 0.21000000000000002s infinite ease-in-out; animation-fill-mode: both;"
+          />
+        </span>
+      </div>
+      <p
+        class="sc-hIFLYB jfoYLt"
+      >
+        Rates
+      </p>
+      <div
+        class="sc-buuUZy bZhThk"
+      >
+        <div
+          class="sc-dujCx jjfXdd"
+        >
+          <ul
+            class="sc-bFmjqi jIwtnJ"
+          >
+            <li
+              class="sc-iGsdBT dZOZFL"
+            >
+              <span
+                class="sc-ckeRpf iYBsOb"
+              >
+                 ---
+              </span>
+              <span
+                class="sc-ckeRpf iYBsOb"
+              >
+                <span
+                  class="sc-kRYBTm evTJmm"
+                >
+                  --
+                </span>
+                 --
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="sc-ivAPlj VLLVr"
+        >
+          <div
+            class="sc-erJYPI chvWkk"
+          >
+            <div
+              class="sc-jwXWPX KvGDy"
+            >
+              <span
+                class="sc-gPvXVi ENRVy"
+              >
+                Date:
+              </span>
+              <span
+                class="sc-gPvXVi sc-fvifJB ENRVy kITBOq"
+              >
+                ---
+              </span>
+            </div>
+            <div
+              class="sc-jwXWPX KvGDy"
+            >
+              <span
+                class="sc-gPvXVi ENRVy"
+              >
+                Currency:
+              </span>
+              <select
+                class="sc-cNGgOM ecoeGE"
+              >
+                <option
+                  value="---"
+                >
+                  ---
+                </option>
+              </select>
+            </div>
+          </div>
+          <button
+            class="sc-kpjZlD ijPmbH"
+          >
+            Generate
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
