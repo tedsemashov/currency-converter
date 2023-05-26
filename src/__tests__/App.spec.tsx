@@ -1,7 +1,7 @@
-import App from './App';
+import App from '../App';
 import { render, fireEvent, screen, act } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import store from './app/store';
+import store from '../app/store';
 
 describe('App component', () => {
   it('should return common UI', () => {
