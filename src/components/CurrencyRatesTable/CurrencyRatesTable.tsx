@@ -10,7 +10,9 @@ import { EMPTY_CURRENCY, EMPTY_RATE } from '../../constants/common';
 type CurrencyRatesTableProps = {
   currency: {
     base: string;
-    rates: object;
+    rates: {
+      [key: string]: number | string;
+    };
   };
 };
 

@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { EMPTY_CURRENCY, EMPTY_RATE } from '../../constants/common';
 
-interface CurrencyState {
+type CurrencyState = {
   date: string;
   base: string;
-  rates: object;
+  rates: { [p: string]: string | number };
   isLoading: boolean;
-}
+};
 
 const initialState: CurrencyState = {
   date: EMPTY_CURRENCY,
@@ -19,7 +19,10 @@ export const currencySlice = createSlice({
   name: 'currency',
   initialState,
   reducers: {
-    setData: (state, { payload }: PayloadAction<CurrencyState>) => {
+    setData: (
+      state,
+      { payload }: PayloadAction<Omit<CurrencyState, 'isLoading'>>
+    ) => {
       state.date = payload.date;
       state.base = payload.base;
       state.rates = payload.rates;

@@ -10,6 +10,19 @@ type ButtonProps = {
   currency: string;
 };
 
+type Rate = {
+  date: string;
+  base: string;
+  rates: { [key: string]: number };
+};
+
+type Currency = {
+  [key: string]: {
+    name: string;
+    symbol: string;
+  };
+};
+
 const GenerateButton = ({ text, currency }: ButtonProps) => {
   const dispatch = useAppDispatch();
 
@@ -17,18 +30,17 @@ const GenerateButton = ({ text, currency }: ButtonProps) => {
     dispatch(setLoading(true));
 
     try {
-      const result = (
-        await Promise.all([
-          fetch(`${RATES_URL}${currency}`),
-          fetch(CURRENCIES_URL),
-        ])
-      ).map((result) => result.json());
-      const [loadedData, loadedCurrenciesData] = await Promise.all(result);
+      const result = await Promise.all([
+        fetch(`${RATES_URL}${currency}`),
+        fetch(CURRENCIES_URL),
+      ]);
+      const [loadedData, loadedCurrenciesData]: [Rate, Currency] =
+        await Promise.all([result[0].json(), result[1].json()]);
 
       dispatch(setData(loadedData));
       dispatch(setCurrencies(loadedCurrenciesData));
       dispatch(setLoading(false));
-    } catch (error) {
+    } catch (error: unknown) {
       const message = error instanceof Error ? error.message : String(error);
 
       dispatch(setError({ isError: true, message }));
