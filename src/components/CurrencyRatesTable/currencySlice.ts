@@ -8,6 +8,8 @@ type CurrencyState = {
   isLoading: boolean;
 };
 
+type OmittedCurrencyState = Omit<CurrencyState, 'isLoading'>;
+
 const initialState: CurrencyState = {
   date: EMPTY_CURRENCY,
   base: EMPTY_CURRENCY,
@@ -19,10 +21,7 @@ export const currencySlice = createSlice({
   name: 'currency',
   initialState,
   reducers: {
-    setData: (
-      state,
-      { payload }: PayloadAction<Omit<CurrencyState, 'isLoading'>>
-    ) => {
+    setData: (state, { payload }: PayloadAction<OmittedCurrencyState>) => {
       state.date = payload.date;
       state.base = payload.base;
       state.rates = payload.rates;

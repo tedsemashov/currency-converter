@@ -1,10 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { EMPTY_CURRENCY } from '../../constants/common';
+import { Currency } from './GenerateButton';
 
-interface CurrenciesState {
+type CurrenciesState = {
   keys: string[];
-  fullInfo: object;
-}
+  fullInfo: {
+    [key: string]: {
+      name: string;
+      symbol: string;
+    };
+  };
+};
 
 const initialState: CurrenciesState = {
   keys: [EMPTY_CURRENCY],
@@ -15,7 +21,7 @@ export const currenciesSlice = createSlice({
   name: 'currencies',
   initialState,
   reducers: {
-    setCurrencies: (state, { payload }: PayloadAction<object>) => {
+    setCurrencies: (state, { payload }: PayloadAction<Currency>) => {
       state.keys = Object.keys(payload);
       state.fullInfo = payload;
     },

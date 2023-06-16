@@ -16,7 +16,7 @@ type Rate = {
   rates: { [key: string]: number };
 };
 
-type Currency = {
+export type Currency = {
   [key: string]: {
     name: string;
     symbol: string;

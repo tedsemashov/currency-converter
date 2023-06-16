@@ -12,10 +12,12 @@ type InteractiveElementsProps = {
   };
 };
 
+const DEFAULT_CURRENCY = 'EUR';
+
 const InteractiveElements = ({
   currency: { date, base },
 }: InteractiveElementsProps) => {
-  const [selectedCurrency, setSelectedCurrency] = useState('EUR');
+  const [selectedCurrency, setSelectedCurrency] = useState(DEFAULT_CURRENCY);
   const options = useAppSelector(({ currencies }) => currencies.keys);
 
   const buttonText = date === EMPTY_CURRENCY ? 'Generate' : 'Regenerate';
